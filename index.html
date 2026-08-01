@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Demo</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon-192.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            margin: 0;
+        }
+        h1 { font-size: 2.5em; margin-bottom: 10px; }
+        p { font-size: 1.2em; }
+        .card {
+            background: white;
+            color: #333;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 400px;
+            margin: 30px auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>🏦 Banking Demo</h1>
+    <div class="card">
+        <h2>Welcome to TWA Testing</h2>
+        <p>This is a simple PWA for testing Trusted Web Activity on Android.</p>
+        <p><strong>Current URL:</strong> <span id="url"></span></p>
+        <p><strong>Token:</strong> <span id="token"></span></p>
+    </div>
+
+    <script>
+        // Display current URL and any auth token
+        document.getElementById('url').textContent = window.location.href;
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('auth_token');
+        document.getElementById('token').textContent = token || 'None';
+        
+        // Register service worker for PWA
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js');
+        }
+    </script>
+</body>
+</html>
