@@ -2,7 +2,7 @@
   "relation": ["delegate_permission/common.handle_all_urls"],
   "target": {
     "namespace": "android_app",
-    "package_name": "com.example.bankapp",
+    "package_name": "in.truethic.twa_mobileapp",
     "sha256_cert_fingerprints": [
       "04:14:D3:8B:F6:E0:C6:BC:74:FA:DD:6F:BE:CF:4C:E4:FA:38:A6:6A:EB:77:08:9B:9D:68:3A:31:0E:A1:CD:E0"
     ]
